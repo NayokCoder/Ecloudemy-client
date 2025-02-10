@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router";
+import Logo1 from "../public/assets/logo.png";
 
 const Navbar = () => {
   return (
-    <div className=" w-full">
-      <div className="navbar bg-base-100 max-w-[1440px] mx-auto ">
+    <div className=" w-full border-b border-gray-200">
+      <div className="navbar bg-white max-w-[1440px] mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
-            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52  shadow">
               <li>
                 <a>Item 1</a>
               </li>
@@ -26,7 +28,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className=" text-3xl font-bold">Ecloudemy</a>
+          <Link to="/" className="w-80  h-15  ">
+            <img src={Logo1} alt="" className="w-80  h-20 ob  " />
+          </Link>
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -66,9 +70,11 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar-end gap-3">
-          <button className="btn border-secondary hover:btn-secondary rounded-full">SIGN IN</button>
-          <button className="btn border-secondary hover:btn-secondary rounded-full">Join Zero to Mastery</button>
+        <div className="navbar-end  gap-3">
+          {/* <button className="btn   border-secondary hover:btn-secondary rounded-full">SIGN IN</button> */}
+          <Link to="register" className="btn border-secondary hover:btn-secondary rounded-full">
+            Register
+          </Link>
         </div>
       </div>
     </div>

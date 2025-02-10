@@ -47,7 +47,7 @@ const MemberShip = () => {
           </div>
 
           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <motion.button whileHover={{ scale: 1.05, transition: { duration: 2, ease: "easeOut", transformOrigin: "center" } }} whileTap={{ scale: 0.9, transition: { duration: 2, ease: "easeInOut" } }}>
+            <motion.div whileHover={{ scale: 1.05, transition: { duration: 2, ease: "easeOut", transformOrigin: "center" } }} whileTap={{ scale: 0.9, transition: { duration: 2, ease: "easeInOut" } }}>
               <div className="h-fit max-w-lg  bg-white rounded-3xl sm:rounded-3xl shadow-lg text-gray-700 mx-auto sm:-mt-25 ">
                 <h3 className="text-3xl sm:text-4xl h-48 bg-secondary font-semibold  rounded-t-3xl text-white flex flex-col items-center justify-center text-center z-10">
                   Zero To Mastery
@@ -70,7 +70,7 @@ const MemberShip = () => {
                   </motion.button>
                 </div>
               </div>
-            </motion.button>
+            </motion.div>
           </motion.div>
 
           {/* Bootcamps & College */}

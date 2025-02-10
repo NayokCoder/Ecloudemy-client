@@ -95,7 +95,7 @@ const Testimonials = () => {
   }, [slider]);
 
   return (
-    <section className="py-16 px-4 md:px-16 h-fit text-gray-800 bg-gray-100  ">
+    <section className="py-16 px-4 md:px-16 h-fit text-gray-800 bg-gray-100   ">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold">What 1000's of successful ZTM students are saying</h2>
         <p className="text-gray-500 max-w-2xl mx-auto mt-2">We've helped thousands of people (just like you) go from zero to getting hired in their dream role to advancing their careers.</p>
