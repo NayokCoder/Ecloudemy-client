@@ -1,27 +1,42 @@
 import { FaGithub, FaXTwitter, FaLinkedin, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <div className="bg-black ">
+    <div className="bg-blue-950 ">
       <footer className=" text-white py-10 px-6 max-w-[1440px] mx-auto">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Logo Section */}
           <div>
-            <h1 className="text-2xl font-bold">ZTM</h1>
+            <h1 className="text-2xl font-bold">Ecloudemy</h1>
           </div>
 
           {/* Quick Links */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-gray-300">
             <div>
               <h2 className="font-semibold text-white mb-3">Quick Links</h2>
               <ul className="space-y-2">
-                <li>Home</li>
-                <li>Pricing</li>
-                <li>Testimonials</li>
-                <li>Blog</li>
-                <li>Cheat Sheets</li>
-                <li>Industry Newsletters</li>
-                <li>Community</li>
+                <li>
+                  <Link to="/testimonials" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/webinar" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                    Webinar
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/courses" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                    Our Courses
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/contact" className="relative  text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -34,20 +49,14 @@ const Footer = () => {
                 <li>Web Development</li>
                 <li>Machine Learning & AI</li>
                 <li>Data Analytics</li>
-                <li>DevOps & Cloud</li>
-                <li>Design</li>
-                <li>Cyber Security</li>
-                <li>Lifetime Challenge</li>
-                <li>Learning Passport</li>
               </ul>
             </div>
 
             <div>
               <h2 className="font-semibold text-white mb-3">Company</h2>
               <ul className="space-y-2">
-                <li>About ZTM</li>
+                <li>About Ecloudemy</li>
                 <li>Ambassadors</li>
-                <li>Contact Us</li>
               </ul>
             </div>
           </div>
@@ -55,11 +64,6 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-10 border-t border-gray-700 pt-6">
-          {/* Trustpilot Rating */}
-          <p className="text-gray-300">
-            Excellent <span className="text-white font-bold">4.9 out of 5</span> ⭐ Trustpilot
-          </p>
-
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
             <FaGithub className="text-gray-300 hover:text-white cursor-pointer text-xl" />
@@ -71,15 +75,15 @@ const Footer = () => {
           </div>
 
           {/* Legal Links */}
-          <div className="text-gray-400 text-sm flex gap-4 mt-4 md:mt-0">
+          <div className="text-white text-sm flex gap-4 mt-4 md:mt-0">
             <p>Privacy</p>
             <p>Terms</p>
             <p>Cookies</p>
           </div>
 
           {/* Copyright */}
-          <p className="text-gray-400 text-sm mt-4 md:mt-0">
-            <span className="font-bold text-white">Copyright © 2025</span>, Zero To Mastery Inc.
+          <p className="text-white text-sm mt-4 md:mt-0">
+            <span className="font-bold text-white">Copyright © 2025</span>, Ecloudemy Inc.
           </p>
         </div>
       </footer>
