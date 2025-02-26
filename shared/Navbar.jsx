@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo1 from "../public/assets/logo.png";
-import { FaBookOpen, FaDiscourse, FaHome } from "react-icons/fa";
+import { FaBookOpen, FaDiscourse, FaFacebook, FaGithub, FaHome, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { CgMenuGridR } from "react-icons/cg";
 
 import { RiCommunityFill } from "react-icons/ri";
 import { HiAcademicCap } from "react-icons/hi2";
 import { motion } from "framer-motion";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,16 +20,16 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const links = [
-    { name: "Home", path: "/", icon: <FaHome /> },
-    { name: "Webinar", path: "/webinar", icon: <FaBookOpen /> },
+    { name: "Home", path: "/", icon: <img src="/assets/Icon/icons8-home-48.png" alt="Home" className="w-6 h-6" /> },
+    { name: "Webinar", path: "/webinar", icon: <img src="/assets/Icon/webinar.png" alt="Webinar Icon" className="w-6 h-6" /> },
     {
       name: "Our Courses",
       path: "",
-      icon: <FaDiscourse />,
+      icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Webinar Icon" className="w-6 h-6" />,
       submenu: [{ name: "Ms Dynamics 365", path: "" }],
     },
-    { name: "Community", path: "/community", icon: <RiCommunityFill /> },
-    { name: "Testimonial", path: "#", icon: <HiAcademicCap /> },
+    { name: "Community", path: "/community", icon: <img src="/assets/Icon/icons8-community-48.png" alt="Community Icon" className="w-6 h-6" /> },
+    { name: "Testimonial", path: "#", icon: <img src="/assets/Icon/icons8-testimonials-64.png" alt="Testimonial" className="w-6 h-6" /> },
   ];
 
   const dropdownVariants = {
@@ -38,7 +39,17 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-md">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between p-4">
+      <div className="bg-sky-950 h-12  ">
+        <div className="flex space-x-2 mt-4 md:mt-0 xl:max-w-5xl lg:max-w-3xl mx-auto justify-end pt-1.5 px-4 ">
+          <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+            <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
+          </a>
+          <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/icons8-linkedin-96.png" alt="" className="h-8 w-8 " title="https://www.linkedin.com/company/ecloudemy/" />
+          </a>
+        </div>
+      </div>
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-4 ">
         {/* Logo */}
         <Link to="/" className="w-32">
           <img src={Logo1} alt="Logo" className="w-32 h-14" />
@@ -77,12 +88,10 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Contact Button */}
-        <div className="hidden lg:flex bg-blue-950 text-white px-4 py-2 rounded-3xl">
+        <Link to="/contact" className="hidden lg:flex bg-blue-950 text-white px-4 py-2 rounded-3xl">
           <img src="/assets/icons8-contact-us-64.png" alt="Contact" className="w-5" />
-          <Link to="/contact" className="ml-2 text-lg">
-            Contact
-          </Link>
-        </div>
+          <button className="ml-2 text-lg">Contact</button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">

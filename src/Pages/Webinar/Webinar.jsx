@@ -6,7 +6,7 @@ const webinars = [
     id: 1,
     date: "N/A",
     status: "Coming Soon",
-    topic: "Microsoft Dynamics 365",
+    topic: "Dynamics 365 Career Insights",
     details: "This webinar will cover the fundamentals and advanced features of Microsoft Dynamics 365.",
   },
 ];

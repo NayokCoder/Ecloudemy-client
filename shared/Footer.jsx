@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div className="bg-blue-950 ">
-      <footer className=" text-white py-10 px-6 max-w-[1440px] mx-auto">
+      <footer className=" text-white py-4 px-6 max-w-[1440px] mx-auto">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Logo Section */}
           <div>
@@ -41,48 +41,37 @@ const Footer = () => {
             </div>
 
             <div>
-              <h2 className="font-semibold text-white mb-3">The Academy</h2>
+              <h2 className="font-semibold text-white mb-4">Company</h2>
               <ul className="space-y-2">
-                <li>Courses</li>
-                <li>Career Paths</li>
-                <li>Career Path Quiz</li>
-                <li>Web Development</li>
-                <li>Machine Learning & AI</li>
-                <li>Data Analytics</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="font-semibold text-white mb-3">Company</h2>
-              <ul className="space-y-2">
-                <li>About Ecloudemy</li>
-                <li>Ambassadors</li>
+                <li onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className=" text-slate-200 font-semibold cursor-pointer">
+                  About Ecloudemy
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-10 border-t border-gray-700 pt-6">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-2 border-t border-gray-700 pt-3">
           {/* Social Icons */}
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <FaGithub className="text-gray-300 hover:text-white cursor-pointer text-xl" />
-            <FaXTwitter className="text-gray-300 hover:text-white cursor-pointer text-xl" />
-            <FaLinkedin className="text-gray-300 hover:text-white cursor-pointer text-xl" />
-            <FaFacebook className="text-gray-300 hover:text-white cursor-pointer text-xl" />
-            <FaInstagram className="text-gray-300 hover:text-white cursor-pointer text-xl" />
-            <FaYoutube className="text-gray-300 hover:text-white cursor-pointer text-xl" />
+          <div className="flex space-x-4 mt-2 md:mt-0">
+            <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+              <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
+            </a>
+            <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons8-linkedin-96.png" alt="" className="h-8 w-8 " title="https://www.linkedin.com/company/ecloudemy/" />
+            </a>
           </div>
 
           {/* Legal Links */}
-          <div className="text-white text-sm flex gap-4 mt-4 md:mt-0">
+          <div className="text-white text-sm flex gap-4 mt-2 md:mt-0">
             <p>Privacy</p>
             <p>Terms</p>
             <p>Cookies</p>
           </div>
 
           {/* Copyright */}
-          <p className="text-white text-sm mt-4 md:mt-0">
+          <p className="text-white text-sm mt-2 md:mt-0">
             <span className="font-bold text-white">Copyright © 2025</span>, Ecloudemy Inc.
           </p>
         </div>

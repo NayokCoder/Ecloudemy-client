@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-gray-100 text-white">
+    <div className="min-h-screen flex items-center justify-center px-4 py-5 bg-gray-100 text-white">
       <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="w-full max-w-lg">
-        <div className="bg-white text-gray-900 p-6 rounded-xl shadow-xl">
-          <h2 className="text-2xl font-semibold text-center mb-4">Contact Us</h2>
+        <div className=" text-gray-900 p-6 rounded-xl shadow-xl">
+          <h2 className="text-2xl font-bold bg-blue-950 text-white flex items-center justify-center rounded-lg text-center h-24 mb-4">Contact Us</h2>
           <form className="flex flex-col space-y-4">
             <input type="text" placeholder="Subject" className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-950" />
             <input type="text" placeholder="Your Name" className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-950" />

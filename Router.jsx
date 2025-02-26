@@ -5,7 +5,6 @@ import Register from "./src/Componet/Register";
 import AdminLogin from "./src/Componet/Admin/AdminLogin";
 import AdminDash from "./src/Componet/Admin/AdminDash";
 
-import OurCourses from "./src/Pages/OurCourses";
 import Community from "./src/Pages/Community";
 import Testimonial from "./src/Pages/Testimonial";
 import AboutUS from "./src/Pages/AboutUS";
@@ -25,10 +24,10 @@ const router = createBrowserRouter([
         path: "/webinar",
         element: <Webinar />,
       },
-      {
-        path: "/our-courses",
-        element: <OurCourses />,
-      },
+      // {
+      //   path: "/our-courses",
+      //   element: <OurCourses />,
+      // },
       {
         path: "/community",
         element: <Community />,
