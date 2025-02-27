@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <div className="bg-blue-950 ">
+    <div className="bg-blue-950  ">
       <footer className=" text-white py-4 px-6 max-w-[1440px] mx-auto">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Logo Section */}
@@ -15,25 +15,25 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-gray-300">
             <div>
               <h2 className="font-semibold text-white mb-3">Quick Links</h2>
-              <ul className="space-y-2">
+              <ul className="">
                 <li>
-                  <Link to="/testimonials" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                  <Link to="/testimonials" className="relative text-md font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/webinar" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                  <Link to="/webinar" className="relative text-md font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
                     Webinar
                   </Link>
                 </li>
                 <li>
-                  <Link to="/courses" className="relative text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                  <Link to="" className="relative text-md font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
                     Our Courses
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/contact" className="relative  text-lg font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
+                  <Link to="/contact" className="relative  text-md font-medium  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-sky-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ">
                     Contact
                   </Link>
                 </li>

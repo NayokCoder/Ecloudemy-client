@@ -28,7 +28,7 @@ const Banner = () => {
   return (
     <>
       <section>
-        <div className="max-w-[1440px] mx-auto relative rounded-2xl overflow-hidden">
+        <div className="max-w-[1440px] mx-auto relative rounded-lg overflow-hidden">
           <div className="relative h-[50vh] md:h-[100vh] mb-72 md:mb-0">
             {/* Slide 1 */}
             {currentSlide === 1 && (
@@ -38,7 +38,7 @@ const Banner = () => {
                   backgroundImage: "url('assets/MainBanner2.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  borderRadius: "16px",
+                  borderbottomRadius: "16px",
                 }}
               >
                 <div className="items-start  top-10/10 absolute md:top-7/10 lg:top-6/9 md:left-3/11 md:transform md:-translate-x-1/2 md:-translate-y-1/2 space-y-3 md:w-1/2">
@@ -61,14 +61,14 @@ const Banner = () => {
                   backgroundImage: "url('assets/MainBanner2.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  borderRadius: "16px",
+                  borderbottomRadius: "16px",
                 }}
               >
                 <div className="items-start  top-10/10 absolute md:top-7/10 lg:top-6/9 md:left-3/11 md:transform md:-translate-x-1/2 md:-translate-y-1/2 space-y-3 md:w-1/2">
                   <h1 className="text-3xl md:text-4xl xl:text-6xl font-bold text-blue-900">Online</h1>
                   <h1 className="text-3xl md:text-4xl xl:text-6xl font-bold text-secondary">Webinar</h1>
-                  <p className="text-center font-semibold px-8 md:px-0 md:text-start md:w-3/4 uppercase">Webinar Topic : Dynamics 365 Career Insights.</p>
-                  <p className="text-center font-semibold md:px-0 md:text-start md:w-3/4">Date: 14th April 2025</p>
+                  <p className="text-center  px-8 md:px-0 md:text-start md:w-3/4 uppercase">Webinar Topic : Dynamics 365 Career Insights.</p>
+                  <p className="text-center font-semibold md:px-0 md:text-start md:w-3/4">Date: 17th April 2025</p>
 
                   <Link to="/register" onClick={() => handleButtonClick("register")} className="btn btn-wide border-0 bg-secondary text-white rounded-full px-6 py-3 text-lg md:text-xl flex items-center justify-center mx-auto md:mx-0 shadow-lg hover:bg-secondary-dark transition">
                     Register Now

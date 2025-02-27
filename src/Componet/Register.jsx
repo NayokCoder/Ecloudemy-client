@@ -1,6 +1,4 @@
 import { useForm } from "react-hook-form";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Count2 from "./CountDown/Count2";
 import Swal from "sweetalert2";
@@ -26,6 +24,13 @@ const Register = () => {
     });
   };
 
+  const fetchCountries = async () => {
+    const response = await axiosSecure.get("/public/country.json");
+    console.log(response);
+  };
+
+  fetchCountries();
+
   return (
     <div className=" bg-white  ">
       <div
@@ -49,25 +54,16 @@ const Register = () => {
             </button>
             {/* Social Media Links */}
             <div className="flex justify-center md:justify-start space-x-4 text-white text-3xl mt-5">
-              <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="cursor-pointer text-3xl hover:text-gray-400 transition" />
+              <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+                <img src="/assets/icons8-facebook-96.png" alt="" className="h-10 w-10" />
               </a>
-
               <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="cursor-pointer text-3xl hover:text-gray-400 transition" />
-              </a>
-
-              <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
-                <FaSquareInstagram className="cursor-pointer text-3xl hover:text-gray-400 transition" />
-              </a>
-
-              <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer">
-                <FaSquareXTwitter className="cursor-pointer text-3xl hover:text-gray-400 transition" />
+                <img src="/assets/icons8-linkedin-96.png" alt="" className="h-10 w-10 " title="https://www.linkedin.com/company/ecloudemy/" />
               </a>
             </div>
           </div>
           <div className="overflow-visible md:w-[50%] p-5 md:p-0 md:pr-5 lg:pr-20  flex items-center">
-            <img src="/assets/4.png" alt="" className="    object-cover " />
+            <img src="/assets/4.png" alt="" className="   p-3 object-cover " />
           </div>
         </div>{" "}
       </div>

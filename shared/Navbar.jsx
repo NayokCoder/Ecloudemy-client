@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo1 from "../public/assets/logo.png";
-import { FaBookOpen, FaDiscourse, FaFacebook, FaGithub, FaHome, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { CgMenuGridR } from "react-icons/cg";
-
-import { RiCommunityFill } from "react-icons/ri";
-import { HiAcademicCap } from "react-icons/hi2";
 import { motion } from "framer-motion";
-import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +21,13 @@ const Navbar = () => {
       name: "Our Courses",
       path: "",
       icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Webinar Icon" className="w-6 h-6" />,
-      submenu: [{ name: "Ms Dynamics 365", path: "" }],
+      submenu: [
+        {
+          name: "MS Dynamics 365",
+          path: "#",
+          icon: <img src="/public/assets/Icon/icons8-courses-64.png" alt="Testimonial" className="w-6 h-6" />,
+        },
+      ],
     },
     { name: "Community", path: "/community", icon: <img src="/assets/Icon/icons8-community-48.png" alt="Community Icon" className="w-6 h-6" /> },
     { name: "Testimonial", path: "#", icon: <img src="/assets/Icon/icons8-testimonials-64.png" alt="Testimonial" className="w-6 h-6" /> },
@@ -39,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-md">
-      <div className="bg-sky-950 h-12  ">
+      <div className="bg-blue-950  h-12  ">
         <div className="flex space-x-2 mt-4 md:mt-0 xl:max-w-5xl lg:max-w-3xl mx-auto justify-end pt-1.5 px-4 ">
           <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
             <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
@@ -134,7 +135,7 @@ const Navbar = () => {
 
         {/* Contact Button Inside Dropdown */}
         <Link to="/contact" className="flex items-center gap-3 px-4 py-2 mt-2 bg-blue-950 text-white rounded-md hover:bg-blue-900 transition">
-          <img src="/assets/icons8-contact-us-64.png" alt=" " className="w-5" />
+          <img src="/assets/icons8-contact-us-64.png" alt=" " className="w-6" />
           <p>Contact</p>
         </Link>
       </div>

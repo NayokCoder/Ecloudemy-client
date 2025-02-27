@@ -102,3 +102,16 @@ body {
     }
   }
 }
+
+.color1 {
+  background: #06c3d5;
+  opacity: 1;
+}
+.color2 {
+  background: #5c1bb1;
+  opacity: 100;
+}
+.color3 {
+  background: #8f20a3;
+  opacity: 5;
+}
