@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const AboutUS = () => {
   return (
     <div className="min-h-screen  p-6 flex flex-col items-center justify-center ">
-      <img src="/public/assets/about_us-removebg-preview.png" alt="about us" />
+      <img src="/assets/about_us-removebg-preview.png" alt="about us" />
       <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <div className="max-w-4xl ">
           <div className="text-gray-900 p-6 rounded-xl mb-6">

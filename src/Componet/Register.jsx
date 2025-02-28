@@ -2,9 +2,11 @@ import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Count2 from "./CountDown/Count2";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 const Register = () => {
   const axiosSecure = useAxiosSecure();
+  const [countries, setCountries] = useState([]);
 
   const {
     register,
@@ -24,12 +26,22 @@ const Register = () => {
     });
   };
 
-  const fetchCountries = async () => {
-    const response = await axiosSecure.get("/public/country.json");
-    console.log(response);
-  };
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("/country.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setCountries(data); // দেশগুলোর নাম স্টেটে সেট করা
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
 
-  fetchCountries();
+    fetchCountries();
+  }, []);
 
   return (
     <div className=" bg-white  ">
@@ -112,12 +124,13 @@ const Register = () => {
             {/* Country with Animated Dropdown */}
             <div className="px-4">
               <label className="block text-gray-700 font-medium">Country *</label>
-              <select {...register("country", { required: "Country is required" })} className="w-full border border-slate-200 rounded-lg p-2 mt-1  transition-all ease-in-out duration-300 hover:bg-blue-50">
+              <select {...register("country", { required: "Country is required" })} className="w-full border border-slate-200 rounded-lg p-2 mt-1">
                 <option value="">Select Country</option>
-                <option value="USA">United States</option>
-                <option value="Canada">Canada</option>
-                <option value="UK">United Kingdom</option>
-                <option value="India">India</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
               </select>
               {errors.country && <p className="text-red-500 text-sm">{errors.country.message}</p>}
             </div>

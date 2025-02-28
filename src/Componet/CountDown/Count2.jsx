@@ -61,7 +61,7 @@ const Count2 = () => {
 
   return (
     <div className="countdown-container bg-secondary text-center text-base text-white space-y-3 rounded-2xl h-32 p-5">
-      <h2 className="countdown-title text-center">{eventName || "Ms 365 Dynamic"}</h2>
+      <h2 className="countdown-title text-center">{eventName || "Dynamics 365 Career Insights."}</h2>
       {timeRemaining > 0 ? (
         <>
           <p>{new Date(eventDate).toDateString()} @ 11.00 AM </p>
