@@ -141,7 +141,7 @@ const Register = () => {
 
             {/* Mobile Number */}
             <div className="px-4">
-              <label className="block text-gray-700 font-medium">Mobile Number</label>
+              <label className="block text-gray-700 font-medium">Mobile Number (WhatsApp Number)</label>
               <input type="tel" {...register("number")} className="w-full border border-slate-200 rounded-lg p-2 mt-1  " placeholder="Enter Mobile Number" />
             </div>
 
