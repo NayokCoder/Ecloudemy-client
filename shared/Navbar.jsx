@@ -42,7 +42,7 @@ const Navbar = () => {
     <div className="w-full bg-white shadow-md">
       <div className="bg-blue-950  h-12  ">
         <div className="flex space-x-2 mt-4 md:mt-0 xl:max-w-5xl lg:max-w-3xl mx-auto justify-end pt-1.5 px-4 ">
-          <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+          <a href="https://www.facebook.com/share/1GydGAaWtn/ " target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
             <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
           </a>
           <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">

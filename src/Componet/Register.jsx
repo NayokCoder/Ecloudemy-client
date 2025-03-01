@@ -19,10 +19,15 @@ const Register = () => {
 
     console.log("Form Submitted:", data);
     Swal.fire({
-      title: "Congratulations! Your seat has been successfully booked ",
-      text: "Join Our Whatsapp Group",
+      title: "Congratulations! Your seat has been successfully booked",
+      text: "Join Our WhatsApp Group",
       icon: "success",
-      draggable: true,
+      confirmButtonText: "Join Now",
+      allowOutsideClick: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open("https://chat.whatsapp.com/YOUR_GROUP_LINK", "_blank"); // Replace with your actual WhatsApp group link
+      }
     });
   };
 
@@ -66,7 +71,7 @@ const Register = () => {
             </button>
             {/* Social Media Links */}
             <div className="flex justify-center md:justify-start space-x-4 text-white text-3xl mt-5">
-              <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+              <a href="https://www.facebook.com/share/1GydGAaWtn/" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
                 <img src="/assets/icons8-facebook-96.png" alt="" className="h-10 w-10" />
               </a>
               <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
@@ -91,7 +96,6 @@ const Register = () => {
 
           {/* Form Section */}
           <form onSubmit={handleSubmit(onSubmit)} className="  w-full md:w-[75%] lg:w-[50%] space-y-4 shadow-2xl rounded-lg  pt-0">
-            {/* <CoutDown /> */}
             <Count2 />
 
             {/* First Name */}

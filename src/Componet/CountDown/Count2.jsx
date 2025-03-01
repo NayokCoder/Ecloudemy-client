@@ -2,73 +2,65 @@ import React, { useState, useEffect } from "react";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
 
 const Count2 = () => {
-  const [eventName, setEventName] = useState("");
+  const [eventName, setEventName] = useState("Dynamics 365 Career Insights");
   const [eventDate, setEventDate] = useState("");
-  const [timeRemaining, setTimeRemaining] = useState(0);
+  const [timeRemaining, setTimeRemaining] = useState(null);
   const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     const fetchEventData = async () => {
-      const res = await axiosSecure.get("/api/countdown");
-      const data = res.data[0];
+      try {
+        const res = await axiosSecure.get("/api/countdown");
+        const data = res.data[0];
 
-      setEventName(data.eventName);
-      setEventDate(data.eventDate);
+        if (data?.eventDate) {
+          setEventName(data.eventName);
+          setEventDate(data.eventDate);
 
-      const eventTime = new Date(data.eventDate).getTime();
-      const currentTime = new Date().getTime();
-      setTimeRemaining(eventTime - currentTime);
+          const eventTime = new Date(data.eventDate).getTime();
+          const currentTime = Date.now();
+          setTimeRemaining(eventTime - currentTime);
+        }
+      } catch (error) {
+        console.error("Error fetching countdown data:", error);
+      }
     };
 
     fetchEventData();
-  }, []);
+  }, [axiosSecure]);
 
   useEffect(() => {
+    if (timeRemaining === null) return;
+
     const interval = setInterval(() => {
-      setTimeRemaining((prev) => (prev > 0 ? prev - 1000 : 0));
+      setTimeRemaining((prev) => (prev > 1000 ? prev - 1000 : 0));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const formatTime = (time) => {
-    const days = Math.floor(time / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((time / (1000 * 60)) % 60);
-    const seconds = Math.floor((time / 1000) % 60);
-
-    return (
-      <div className="countdown-display flex gap-4 justify-center bg-secondary">
-        <div>
-          <span className="text-4xl font-bold">{days}</span>
-          <br /> Days
-        </div>
-        <div>
-          <span className="text-4xl font-bold">{hours}</span>
-          <br /> Hours
-        </div>
-        <div>
-          <span className="text-4xl font-bold">{minutes}</span>
-          <br /> Minutes
-        </div>
-        <div>
-          <span className="text-4xl font-bold">{seconds}</span>
-          <br /> Seconds
-        </div>
-      </div>
-    );
-  };
+  }, [timeRemaining]);
 
   return (
-    <div className="countdown-container bg-secondary text-center text-base text-white space-y-3 rounded-2xl h-32 p-5">
-      <h2 className="countdown-title text-center">{eventName || "Dynamics 365 Career Insights."}</h2>
+    <div className="countdown-container bg-secondary text-center text-white space-y-1 rounded-2xl p-5">
+      <h2 className="countdown-title">{eventName}</h2>
+      {eventDate && <p>{new Date(eventDate).toDateString()} @ 11.00 AM</p>}
+
       {timeRemaining > 0 ? (
-        <>
-          <p>{new Date(eventDate).toDateString()} @ 11.00 AM </p>
-          {formatTime(timeRemaining)}
-        </>
+        <div className="flex gap-4 justify-center bg-secondary rounded-lg">
+          {[
+            { label: "Days", value: Math.floor(timeRemaining / (1000 * 60 * 60 * 24)) },
+            { label: "Hours", value: Math.floor((timeRemaining / (1000 * 60 * 60)) % 24) },
+            { label: "Minutes", value: Math.floor((timeRemaining / (1000 * 60)) % 60) },
+            { label: "Seconds", value: Math.floor((timeRemaining / 1000) % 60) },
+          ].map((item, index) => (
+            <div key={index} className="text-center">
+              <span className="text-4xl font-bold">{item.value}</span>
+              <br />
+              {item.label}
+            </div>
+          ))}
+        </div>
       ) : (
-        <p>Count Down Will Start Soon</p>
+        <p>Countdown Will Start Soon</p>
       )}
     </div>
   );

@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mt-2 border-t border-gray-700 pt-3">
           {/* Social Icons */}
           <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="https://www.facebook.com/people/Ecloudemy/615710004812347" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/people/Ecloudemy/615710004812347">
+            <a href="https://www.facebook.com/share/1GydGAaWtn/" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
               <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
             </a>
             <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
