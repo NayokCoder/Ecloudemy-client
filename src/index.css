@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Force Light Mode */
+:root {
+  color-scheme: light;
+  --background-color: white;
+  --text-color: black;
+}
+
+/* Ignore Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+    --background-color: white !important;
+    /* --text-color: black !important; */
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.rowRed {
+  background-color: #2f2d51;
+}
+.lightBlue {
+  background-color: #f6f6fb;
+}
+.blue {
+  background-color: #3f1ee9;
+}
+
+/* text roller */
+.roller {
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 5s infinite;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -4rem;
+  }
+  50% {
+    top: -8rem;
+  }
+  72.5% {
+    top: -12.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 2.125rem;
+  }
+
+  .roller {
+    height: 2.6rem;
+    line-height: 2.125rem;
+  }
+
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .roller #rolltext {
+    animation: slide-mob 5s infinite;
+  }
+
+  @keyframes slide-mob {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -2.125rem;
+    }
+    50% {
+      top: -4.25rem;
+    }
+    72.5% {
+      top: -6.375rem;
+    }
+  }
+}
+
+.color1 {
+  background: #06c3d5;
+  opacity: 1;
+}
+.color2 {
+  background: #5c1bb1;
+  opacity: 100;
+}
+.color3 {
+  background: #8f20a3;
+  opacity: 5;
+}
