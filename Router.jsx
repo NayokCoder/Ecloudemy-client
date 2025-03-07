@@ -13,6 +13,7 @@ import DashBoard from "./src/Componet/Admin/DashBoard";
 import UserInfo from "./src/Componet/Admin/LinkPages/UserInfo";
 import DashHome from "./src/Componet/Admin/LinkPages/DashHome";
 import Page404 from "./src/Pages/Page404";
+import ContactMail from "./src/Componet/Admin/LinkPages/ContactMail";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/home",
         element: (
           <AdminRoute>
             <DashHome />
@@ -76,6 +77,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <UserInfo />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/mail",
+        element: (
+          <AdminRoute>
+            <ContactMail />
           </AdminRoute>
         ),
       },
