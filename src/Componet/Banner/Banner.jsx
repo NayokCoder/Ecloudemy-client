@@ -71,9 +71,9 @@ const Banner = () => {
                     <span className="font-semibold">Webinar Topic :</span> Dynamics 365 Career Insights.
                   </p>
                   <div className="flex justify-center md:justify-start gap-2">
-                    <img src="/public/assets/icons8-date-100.png" alt="" className="w-6 h-6" />
+                    <img src="/assets/Icon/icons8-date-96.png" alt="" className="w-6 h-6" />
                     <p className="text-center font-semibold md:px-0 md:text-start ">17th April 2025</p>
-                    <img src="/public/assets/icons8-time-100.png" alt="" className="w-6 h-6" />
+                    <img src="/assets/Icon/icons8-time-96.png" alt="" className="w-6 h-6" />
                     <p className="text-center font-semibold md:px-0 md:text-start ">9.30 PM</p>
                   </div>
 

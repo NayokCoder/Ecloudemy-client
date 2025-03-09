@@ -19,13 +19,13 @@ const Navbar = () => {
     { name: "Webinar", path: "/webinar", icon: <img src="/assets/Icon/webinar.png" alt="Webinar Icon" className="w-6 h-6" /> },
     {
       name: "Our Courses",
-      path: "",
-      icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Webinar Icon" className="w-6 h-6" />,
+      path: "#",
+      icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Courses Icon" className="w-6 h-6" />,
       submenu: [
         {
           name: "MS Dynamics 365",
           path: "#",
-          icon: <img src="/public/assets/Icon/icons8-courses-64.png" alt="Testimonial" className="w-6 h-6" />,
+          icon: <img src="/public/assets/Icon/icons8-courses-64.png" alt="Course" className="w-6 h-6" />,
         },
       ],
     },
@@ -40,39 +40,31 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-md">
-      <div className="bg-blue-950  h-12  ">
-        <div className="flex space-x-2 mt-4 md:mt-0 xl:max-w-5xl lg:max-w-3xl mx-auto justify-end pt-1.5 px-4 ">
-          <a href="https://www.facebook.com/share/1GydGAaWtn/ " target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
-            <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
-          </a>
-          <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons8-linkedin-96.png" alt="" className="h-8 w-8 " title="https://www.linkedin.com/company/ecloudemy/" />
-          </a>
-        </div>
+      {/* Top Social Links */}
+      <div className="bg-blue-950 h-12 flex justify-end items-center px-4 space-x-2">
+        <a href="https://www.facebook.com/share/1GydGAaWtn/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/icons8-facebook-96.png" alt="Facebook" className="h-8 w-8" />
+        </a>
+        <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/icons8-linkedin-96.png" alt="LinkedIn" className="h-8 w-8" />
+        </a>
       </div>
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-4 ">
+
+      {/* Navbar */}
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-4">
         {/* Logo */}
         <Link to="/" className="w-32">
           <img src={Logo1} alt="Logo" className="w-32 h-14" />
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex">
           <ul className="flex space-x-6 relative">
             {links.map((item, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative group">
                 {item.submenu ? (
                   <div className="flex items-center gap-2 text-lg font-medium text-blue-950 hover:text-sky-600 transition cursor-pointer" onMouseEnter={() => setIsCoursesOpen(true)} onMouseLeave={() => setIsCoursesOpen(false)}>
                     {item.icon} {item.name}
-                    {isCoursesOpen && (
-                      <motion.div className="absolute z-10 left-0 mt-28 w-48 h-20 rounded-lg shadow-lg" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants}>
-                        {item.submenu.map((subItem, subIndex) => (
-                          <Link key={subIndex} to={subItem.path} tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
                   </div>
                 ) : (
                   <Link
@@ -82,6 +74,17 @@ const Navbar = () => {
                   >
                     {item.icon} {item.name}
                   </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {isCoursesOpen && item.submenu && (
+                  <motion.div className="absolute z-10 left-0 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants} onMouseEnter={() => setIsCoursesOpen(true)} onMouseLeave={() => setIsCoursesOpen(false)}>
+                    {item.submenu.map((subItem, subIndex) => (
+                      <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-gray-700 hover:bg-gray-200 transition">
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </motion.div>
                 )}
               </div>
             ))}

@@ -63,15 +63,19 @@ const Register = () => {
       >
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row ">
           <div className=" md:w-[50%] space-y-1 text-center md:text-left pt-10 md:py-10  md:pl-5 lg:pl-20 ">
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-400 mx-auto tracking-wider">Webinar Topic :</p>
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide overflow">DYNAMICS 365 Career Insights .</p>
-            {/* <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-sky-400 mx-auto tracking-wide">Career Insights</p> */}
-            {/* <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide"></p> */}
-            <button className="text-white text-2xl lg:text-3xl tracking-wide  mt-5">
-              Date : <span className="text-sky-400">17th April 2025</span>
+            <p className="text-4xl xl:text-5xl font-bold text-orange-400 mx-auto tracking-wider">Webinar Topic :</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide overflow">DYNAMICS 365 CAREER INSIGHTS.</p>
+
+            <button className="text-white text-xl lg:text-2xl tracking-wide mt-1 lg:mt-4 ">
+              <div className="flex justify-center md:justify-start gap-2">
+                <img src="/assets/Icon/icons8-date-96.png" alt="" className="w-10 h-10" />
+                <p className="text-center font-semibold md:px-0 md:text-start ">17th April 2025</p>
+                <img src="/assets/Icon/icons8-time-96.png" alt="" className="w-10 h-10" />
+                <p className="text-center font-semibold md:px-0 md:text-start ">9.30 PM</p>
+              </div>
             </button>
             {/* Social Media Links */}
-            <div className="flex justify-center md:justify-start space-x-4 text-white text-3xl mt-5">
+            <div className="flex justify-center md:justify-start space-x-4 text-white text-3xl md:mt-3">
               <a href="https://www.facebook.com/share/1GydGAaWtn/" target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
                 <img src="/assets/icons8-facebook-96.png" alt="" className="h-10 w-10" />
               </a>
@@ -80,7 +84,7 @@ const Register = () => {
               </a>
             </div>
           </div>
-          <div className="overflow-visible md:w-[50%] p-5 md:p-0 md:pr-5 lg:pr-20  flex items-center">
+          <div className="overflow-visible md:w-[50%] px-5 py-2 md:p-0 md:pr-5 lg:pr-20  flex items-center">
             <img src="/assets/4.png" alt="" className="   p-3 object-cover " />
           </div>
         </div>{" "}
