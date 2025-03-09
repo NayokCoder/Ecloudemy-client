@@ -15,6 +15,7 @@ const UserInfo = () => {
       return res.data;
     },
   });
+  console.log(users);
 
   const handleDelete = async (id) => {
     Swal.fire({
@@ -56,41 +57,43 @@ const UserInfo = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 bg-gray-900 text-white rounded-lg shadow-lg">
+    <div className="max-w-6xl mx-auto px-4 py-6 bg-gray-900 text-white rounded-xl shadow-xl">
       {/* Search Box */}
-      <div className="relative mb-6 flex items-center">
-        <FaSearch className="absolute left-4 text-gray-400" />
-        <input type="text" className="w-full md:w-2/3 pl-10 pr-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 text-white placeholder-gray-400 shadow-md" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+      <div className="relative mb-4 flex items-center">
+        <FaSearch className="absolute left-3 text-gray-400 text-sm" />
+        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-white placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
       </div>
 
       {/* Table */}
       <div className="overflow-x-auto rounded-lg shadow-lg">
-        <table className="w-full bg-gray-800 text-white rounded-lg overflow-hidden">
-          <thead className="bg-indigo-400 text-gry-200 uppercase text-sm">
+        <table className="w-full bg-gray-800 text-white rounded-lg text-sm">
+          <thead className="bg-indigo-500 text-gray-200 uppercase text-xs">
             <tr>
-              <th className="px-4 py-3">#</th>
-              <th className="px-4 py-3">Name</th>
-              <th className="px-4 py-3">Email</th>
-              <th className="px-4 py-3">Country</th>
-              <th className="px-4 py-3">Mobile</th>
-              <th className="px-4 py-3">Profession</th>
-              <th className="px-4 py-3">Actions</th>
+              <th className="px-3 py-2">#</th>
+              <th className="px-3 py-2">Name</th>
+              <th className="px-3 py-2">Email</th>
+              <th className="px-3 py-2">Country</th>
+              <th className="px-3 py-2">Mobile</th>
+              <th className="px-3 py-2">Profession</th>
+              <th className="px-3 py-2">Designation</th>
+              <th className="px-3 py-2">Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredUsers.map((user, index) => (
-              <tr key={user.id} className="border-b text-center border-gray-700 hover:bg-gray-700">
-                <td className="px-4 py-3 text-center">{index + 1}</td>
-                <td className="px-4 py-3 font-semibold">
+              <tr key={user.id} className="border-b border-gray-700 hover:bg-gray-700 text-center">
+                <td className="px-3 py-2">{index + 1}</td>
+                <td className="px-3 py-2 font-medium">
                   {user.firstName} {user.middleName} {user.lastName}
                 </td>
-                <td className="px-4 py-3">{user.email}</td>
-                <td className="px-4 py-3">{user.country}</td>
-                <td className="px-4 py-3">{user.number}</td>
-                <td className="px-4 py-3">{user.profession}</td>
-                <td className="px-4 py-3 text-center flex items-center justify-center gap-4">
-                  <button onClick={() => handleDelete(user.id)} className="px-3 py-2 bg-red-900 text-white rounded-lg shadow-md hover:bg-red-700 flex items-center gap-1">
-                    <FcDeleteDatabase /> Delete
+                <td className="px-3 py-2">{user.email}</td>
+                <td className="px-3 py-2">{user.country}</td>
+                <td className="px-3 py-2">{user.number}</td>
+                <td className="px-3 py-2">{user.profession}</td>
+                <td className="px-3 py-2">{user.designation}</td>
+                <td className="px-3 py-2">
+                  <button onClick={() => handleDelete(user.id)} className="px-2 py-1 bg-red-700 text-white rounded-md shadow hover:bg-red-600 flex items-center gap-1 text-xs">
+                    <FcDeleteDatabase className="text-sm" /> Delete
                   </button>
                 </td>
               </tr>

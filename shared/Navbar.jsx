@@ -65,9 +65,9 @@ const Navbar = () => {
                   <div className="flex items-center gap-2 text-lg font-medium text-blue-950 hover:text-sky-600 transition cursor-pointer" onMouseEnter={() => setIsCoursesOpen(true)} onMouseLeave={() => setIsCoursesOpen(false)}>
                     {item.icon} {item.name}
                     {isCoursesOpen && (
-                      <motion.div className="absolute z-10 left-5 mt-24 w-48 h-20 bg-white  rounded-lg shadow-lg" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants}>
+                      <motion.div className="absolute z-10 left-0 mt-28 w-48 h-20 rounded-lg shadow-lg" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants}>
                         {item.submenu.map((subItem, subIndex) => (
-                          <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-gray-700 hover:text-sky-600  rounded-md">
+                          <Link key={subIndex} to={subItem.path} tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                             {subItem.name}
                           </Link>
                         ))}

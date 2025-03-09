@@ -5,9 +5,9 @@ import DashNav from "./DashNav";
 
 const DashBoard = () => {
   return (
-    <div className="md:flex bg-gray-900 ">
-      <Sidebar className="z-50" />
-      <div className="w-full">
+    <div className="md:flex ">
+      <Sidebar className="z-50 " />
+      <div className="w-full bg-gray-900 h-screen ">
         <DashNav />
         <Outlet />
       </div>

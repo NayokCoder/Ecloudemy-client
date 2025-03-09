@@ -10,15 +10,12 @@ const Sidebar = () => {
   const [loading, setLoading] = useState(false);
 
   const handleLogout = async () => {
-    const isConfirmed = window.confirm("আপনি কি সত্যিই লগআউট করতে চান?");
-    if (isConfirmed) {
-      setLoading(true);
-      localStorage.removeItem("isLoggedIn");
-      setTimeout(() => {
-        navigate("/admin-panel-2025");
-        setLoading(false);
-      }, 1500); // 1.5 সেকেন্ড পর রিডাইরেক্ট
-    }
+    setLoading(true);
+    localStorage.removeItem("isLoggedIn");
+    setTimeout(() => {
+      navigate("/admin-panel-2025");
+      setLoading(false);
+    }, 1500);
   };
 
   return (
@@ -40,7 +37,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink to="/dashboard/mail" className={({ isActive }) => `flex items-center gap-1 px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                <MdContactMail /> Contact mail
+                <MdContactMail /> Incoming mail
               </NavLink>
             </li>
             <div className="divider"></div>
@@ -73,7 +70,7 @@ const Sidebar = () => {
         </nav>
         <div className="mt-4">
           <button onClick={handleLogout} disabled={loading} className={`mt-auto flex items-center space-x-2 p-2 rounded transition`} aria-label="Log out">
-            {loading ? <span className="animate-spin">🔄</span> : <IoLogOutOutline size={18} />}
+            {loading ? <span className="loading loading-dots loading-md"></span> : <IoLogOutOutline size={18} />}
             <span>{loading ? "Logging out..." : "Log out"}</span>
           </button>
         </div>

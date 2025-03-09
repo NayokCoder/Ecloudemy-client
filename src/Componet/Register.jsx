@@ -64,8 +64,8 @@ const Register = () => {
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row ">
           <div className=" md:w-[50%] space-y-1 text-center md:text-left pt-10 md:py-10  md:pl-5 lg:pl-20 ">
             <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-400 mx-auto tracking-wider">Webinar Topic :</p>
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide">DYNAMICS 365 </p>
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-sky-400 mx-auto tracking-wide">Career Insights</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide overflow">DYNAMICS 365 Career Insights .</p>
+            {/* <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-sky-400 mx-auto tracking-wide">Career Insights</p> */}
             {/* <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mx-auto tracking-wide"></p> */}
             <button className="text-white text-2xl lg:text-3xl tracking-wide  mt-5">
               Date : <span className="text-sky-400">17th April 2025</span>
