@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 const DashNav = () => {
   return (
-    <div className=" bg-gray-900 text-slate-100 px-2">
+    <div className=" bg-slate-100 text-gray-700 px-2">
       <div className="navbar">
         <div className="navbar-start">
           <div className="drawer md:hidden bg-gray-900 text-white ">
@@ -22,7 +22,7 @@ const DashNav = () => {
             </div>
             <div className="drawer-side z-10 bg-base-100 shadow-lg drawer-content">
               <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-              <ul className="menu bg-gray-900 text-white h-content min-h-full w-80 p-4">
+              <ul className="menu bg-gray-900 text-gray-700 h-content min-h-full w-80 p-4">
                 <h2 className="text-xl font-bold mb-6">Dashboard</h2>
                 <nav className="flex-1">
                   <ul className="space-y-4">

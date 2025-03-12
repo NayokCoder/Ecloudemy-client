@@ -7,7 +7,7 @@ const DashBoard = () => {
   return (
     <div className="md:flex ">
       <Sidebar className="z-50 " />
-      <div className="w-full bg-gray-900 h-screen ">
+      <div className="w-full bg-slate-100 h-screen ">
         <DashNav />
         <Outlet />
       </div>

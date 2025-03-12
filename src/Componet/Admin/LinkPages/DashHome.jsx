@@ -41,7 +41,7 @@ const DashHome = () => {
     alert("Countdown Reset!");
   };
   return (
-    <div className=" flex flex-col items-center justify-center bg-gray-900 p-6 w-full">
+    <div className=" flex flex-col items-center justify-center bg-slate-100 p-6 w-full">
       <section className="grid grid-cols-3 gap-6 mb-6">
         <div className="stat bg-indigo-400 text-black rounded-2xl">
           <div className="stat-figure text-primary">

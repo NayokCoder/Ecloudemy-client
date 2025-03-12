@@ -9,6 +9,14 @@ const Footer = () => {
           {/* Logo Section */}
           <div>
             <h1 className="text-2xl font-bold">Ecloudemy</h1>
+            <div className="flex items-center justify-center gap-2">
+              <img src="/assets/Icon/icons8-mail-96.png" alt="" className="w-5 " />
+              <h2 className="text-base  bg-blue-950 text-white  rounded-lg text-center place-content-center h-auto ">ecloudemy@gmail.com</h2>
+            </div>
+            <div className="flex gap-2">
+              <img src="/assets/Icon/icons8-whatsapp-96.png" alt="" className="w-5" />
+              <h2 className="text-base  bg-blue-950 text-white  rounded-lg">0123456789</h2>
+            </div>
           </div>
 
           {/* Quick Links */}

@@ -26,9 +26,9 @@ const ContactMail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-8">
+    <div className="min-h-screen bg-slate-100 py-8">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-200 mb-6">Incoming Mail Information</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-700 mb-6">Incoming Mail Information</h2>
 
         {/* Table */}
         <div className="overflow-x-auto bg-gray-800 shadow-lg rounded-lg">

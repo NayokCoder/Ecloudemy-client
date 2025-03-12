@@ -19,9 +19,9 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-gray-900 h-screen hidden md:block shadow-sm border-r-2 border-gray-800">
-      <div className="w-64 bg-gray-900  text-gray-200 p-5 flex flex-col">
-        <h2 className="text-xl font-bold mb-6">Dashboard</h2>
+    <div className="bg-slate-100 h-screen hidden md:block shadow-sm border-r-2 border-gray-800">
+      <div className="w-64 bg-slate-100 text-gray-200 p-5 flex flex-col">
+        <img src="/public/assets/logo.png" alt=" Logo " className="w-28 h-10 mb-8 " />
         <nav className="flex-1">
           <ul className="space-y-4">
             <li>
@@ -41,35 +41,10 @@ const Sidebar = () => {
               </NavLink>
             </li>
             <div className="divider"></div>
-            <li>
-              <NavLink to="/" className={({ isActive }) => `block px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/webinar" className={({ isActive }) => `block px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                Webinar
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/community" className={({ isActive }) => `block px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                Community
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/testimonials" className={({ isActive }) => `block px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                Testimonial
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/register" className={({ isActive }) => `block px-3 py-2 rounded-md ${isActive ? "bg-gray-700 text-white" : "text-gray-500 hover:bg-gray-800"}`}>
-                Register
-              </NavLink>
-            </li>
           </ul>
         </nav>
         <div className="mt-4">
-          <button onClick={handleLogout} disabled={loading} className={`mt-auto flex items-center space-x-2 p-2 rounded transition`} aria-label="Log out">
+          <button onClick={handleLogout} disabled={loading} className={`mt-auto flex text-gray-500 font-semibold items-center space-x-2 p-2 rounded transition`} aria-label="Log out">
             {loading ? <span className="loading loading-dots loading-md"></span> : <IoLogOutOutline size={18} />}
             <span>{loading ? "Logging out..." : "Log out"}</span>
           </button>
