@@ -26,12 +26,12 @@ const ContactMail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 py-8">
+    <div className="min-h-screen bg-slate-100 py-8 mt-5">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-700 mb-6">Incoming Mail Information</h2>
 
         {/* Table */}
-        <div className="overflow-x-auto bg-gray-800 shadow-lg rounded-lg">
+        <div className="overflow-x-auto color3 shadow-lg rounded-lg">
           <table className="min-w-full table-auto">
             <thead className="bg-indigo-600 text-gray-200 uppercase text-sm">
               <tr>
@@ -68,7 +68,7 @@ const ContactMail = () => {
                   ))
               ) : (
                 <tr>
-                  <td colSpan="4" className="text-center py-4 text-gray-500">
+                  <td colSpan="4" className="text-center py-4 text-gray-200 font-semibold">
                     No messages found
                   </td>
                 </tr>

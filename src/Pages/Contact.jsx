@@ -48,7 +48,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-5 bg-gray-100 text-white">
+    <div className="min-h-screen flex items-center justify-center px-4 py-5  text-white ">
       <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="w-full max-w-lg">
         <div className="text-gray-900 p-6 rounded-xl shadow-2xl">
           <div className="text-2xl font-bold p-5 bg-blue-950 text-white  rounded-lg text-center h-auto mb-4">
@@ -85,7 +85,7 @@ const Contact = () => {
             <textarea placeholder="Write your query within 400 words" {...register("message", { required: true })} className="p-3 border border-slate-400 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-950"></textarea>
             {errors.message && <span className="text-red-500">This field is required</span>}
 
-            <button className="bg-blue-950 text-white p-3 rounded-lg hover:bg-blue-900 transition duration-300">Send Message</button>
+            <button className="bg-blue-950 text-white p-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">Send Message</button>
           </form>
         </div>
       </motion.div>

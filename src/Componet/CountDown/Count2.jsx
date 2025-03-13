@@ -40,9 +40,9 @@ const Count2 = () => {
   }, [timeRemaining]);
 
   return (
-    <div className="countdown-container bg-secondary text-center text-white space-y-1 md:rounded-2xl p-5">
+    <div className="countdown-container bg-secondary text-center text-white space-y-1 md:rounded-b-2xl md:rounded-t-sm p-5 mt-1">
       <h2 className="countdown-title">{eventName}</h2>
-      {eventDate && <p>{new Date(eventDate).toDateString()} @ 11.00 AM</p>}
+      {eventDate && <p>{new Date(eventDate).toDateString()} @ 09.30 PM</p>}
 
       {timeRemaining > 0 ? (
         <div className="flex gap-4 justify-center bg-secondary rounded-lg">

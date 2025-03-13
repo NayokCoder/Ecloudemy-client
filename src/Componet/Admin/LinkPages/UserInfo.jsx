@@ -57,11 +57,11 @@ const UserInfo = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 bg-gray-900 text-white rounded-xl shadow-xl">
+    <div className="max-w-6xl mx-auto px-4 py-6 color3 text-white rounded-xl shadow-xl mt-5">
       {/* Search Box */}
       <div className="relative mb-4 flex items-center">
-        <FaSearch className="absolute left-3 text-gray-400 text-sm" />
-        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-white placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+        <FaSearch className="absolute left-3 text-gray-200 text-sm" />
+        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-slate-200 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-white placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
       </div>
 
       {/* Table */}
@@ -69,7 +69,7 @@ const UserInfo = () => {
         <table className="w-full bg-gray-800 text-white rounded-lg text-sm">
           <thead className="bg-indigo-500 text-gray-200 uppercase text-xs">
             <tr>
-              <th className="px-3 py-2">#</th>
+              <th className="px-3 py-2">Serial</th>
               <th className="px-3 py-2">Name</th>
               <th className="px-3 py-2">Email</th>
               <th className="px-3 py-2">Country</th>

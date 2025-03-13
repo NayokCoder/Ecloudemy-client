@@ -77,7 +77,7 @@ const Banner = () => {
                     <p className="text-center font-semibold md:px-0 md:text-start ">9.30 PM</p>
                   </div>
 
-                  <Link to="/register" onClick={() => handleButtonClick("register")} className="btn btn-wide border-0 bg-secondary text-white rounded-full px-6 py-3 text-lg md:text-xl flex items-center justify-center mx-auto md:mx-0 shadow-lg hover:bg-secondary-dark transition">
+                  <Link to="/register" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="btn btn-wide border-0 bg-secondary text-white rounded-full px-6 py-3 text-lg md:text-xl flex items-center justify-center mx-auto md:mx-0 shadow-lg hover:bg-secondary-dark transition">
                     Register Now
                   </Link>
                 </div>
