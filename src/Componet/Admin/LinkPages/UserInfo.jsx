@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
-// XLSX ইমপোর্ট
-
+import { FcDeleteDatabase } from "react-icons/fc";
+import { FaSearch } from "react-icons/fa";
+import Swal from "sweetalert2";
 const UserInfo = () => {
   const axiosSecure = useAxiosSecure();
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,56 +15,85 @@ const UserInfo = () => {
       return res.data;
     },
   });
+  console.log(users);
 
   const handleDelete = async (id) => {
-    const res = await axiosSecure.delete(`/delete/users/${id}`);
-    refetch();
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      // Make this async
+      if (result.isConfirmed) {
+        try {
+          await axiosSecure.delete(`/delete/users/${id}`);
+          refetch();
+          Swal.fire({
+            title: "Deleted!",
+            text: "User has been deleted successfully.",
+            icon: "success",
+          });
+        } catch (error) {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to delete the user. Please try again.",
+            icon: "error",
+          });
+        }
+      }
+    });
   };
 
-  const filteredUsers = users.filter((user) => user.firstName.toLowerCase().includes(searchQuery.toLowerCase()) || user.lastName.toLowerCase().includes(searchQuery.toLowerCase()) || user.email.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredUsers = users.filter((user) =>
+    [user.firstName, user.middleName, user.lastName, user.email]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <input type="text" className="w-full mx-auto md:w-2/3 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
+    <div className="max-w-6xl mx-auto px-4 py-6 color3 text-white rounded-xl shadow-xl mt-5">
+      {/* Search Box */}
+      <div className="relative mb-4 flex items-center">
+        <FaSearch className="absolute left-3 text-gray-200 text-sm" />
+        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-slate-200 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-white placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+      </div>
+
+      {/* Table */}
+      <div className="overflow-x-auto rounded-lg shadow-lg">
+        <table className="w-full bg-gray-800 text-white rounded-lg text-sm">
+          <thead className="bg-indigo-500 text-gray-200 uppercase text-xs">
             <tr>
-              <th>Serial</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Country</th>
-              <th>Mobile Number</th>
-              <th>Profession</th>
-              <th>Actions</th>
+              <th className="px-3 py-2">Serial</th>
+              <th className="px-3 py-2">Name</th>
+              <th className="px-3 py-2">Email</th>
+              <th className="px-3 py-2">Country</th>
+              <th className="px-3 py-2">Mobile</th>
+              <th className="px-3 py-2">Profession</th>
+              <th className="px-3 py-2">Designation</th>
+              <th className="px-3 py-2">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
-              <tr key={user.id}>
-                <td>{index + 1}</td>
-                <div>
-                  <div className="font-bold">
-                    {" "}
-                    <td>
-                      {user.firstName} {user.middleName} {user.lastName}
-                    </td>
-                  </div>
-                  <div className="text-sm opacity-50">
-                    <td>{user.country}</td>
-                  </div>
-                </div>
-
-                <td>{user.email}</td>
-
-                <td>{user.number}</td>
-                <td>{user.profession}</td>
-                <td>{user.organization}</td>
-
-                <td>
-                  <button onClick={() => handleDelete(user.id)} className="px-2 py-1 bg-red-500 text-white rounded">
-                    Delete
+            {filteredUsers.map((user, index) => (
+              <tr key={user.id} className="border-b border-gray-700 hover:bg-gray-700 text-center">
+                <td className="px-3 py-2">{index + 1}</td>
+                <td className="px-3 py-2 font-medium">
+                  {user.firstName} {user.middleName} {user.lastName}
+                </td>
+                <td className="px-3 py-2">{user.email}</td>
+                <td className="px-3 py-2">{user.country}</td>
+                <td className="px-3 py-2">{user.number}</td>
+                <td className="px-3 py-2">{user.profession}</td>
+                <td className="px-3 py-2">{user.designation}</td>
+                <td className="px-3 py-2">
+                  <button onClick={() => handleDelete(user.id)} className="px-2 py-1 bg-red-700 text-white rounded-md shadow hover:bg-red-600 flex items-center gap-1 text-xs">
+                    <FcDeleteDatabase className="text-sm" /> Delete
                   </button>
                 </td>
               </tr>

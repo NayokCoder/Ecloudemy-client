@@ -13,9 +13,9 @@ const WebinarCard = ({ date, status, topic, details, time }) => {
           {/* Webinar Information */}
           <div>
             <div className="flex gap-2">
-              <img src="/public/assets/icons8-datew-100.png" alt="" className="w-6 h-6" />
+              <img src="/assets/Icon/icons8-date-96.png" alt="" className="w-6 h-6" />
               <p className="text-center text-lg font-semibold md:px-0 md:text-start ">{date || "N/A"}</p>
-              <img src="/public/assets/icons8-timew-100.png" alt="" className="w-6 h-6" />
+              <img src="/assets/Icon/icons8-time-96.png" alt="" className="w-6 h-6" />
               <p className="text-center text-lg font-semibold md:px-0 md:text-start ">{time}</p>
             </div>
 

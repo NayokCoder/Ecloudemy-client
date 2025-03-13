@@ -19,13 +19,13 @@ const Navbar = () => {
     { name: "Webinar", path: "/webinar", icon: <img src="/assets/Icon/webinar.png" alt="Webinar Icon" className="w-6 h-6" /> },
     {
       name: "Our Courses",
-      path: "",
-      icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Webinar Icon" className="w-6 h-6" />,
+      path: "#",
+      icon: <img src="/assets/Icon/icons8-courses-64.png" alt="Courses Icon" className="w-6 h-6" />,
       submenu: [
         {
           name: "MS Dynamics 365",
           path: "#",
-          icon: <img src="/public/assets/Icon/icons8-courses-64.png" alt="Testimonial" className="w-6 h-6" />,
+          icon: <img src="/public/assets/Icon/icons8-courses-64.png" alt="Course" className="w-6 h-6" />,
         },
       ],
     },
@@ -40,39 +40,31 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-md">
-      <div className="bg-blue-950  h-12  ">
-        <div className="flex space-x-2 mt-4 md:mt-0 xl:max-w-5xl lg:max-w-3xl mx-auto justify-end pt-1.5 px-4 ">
-          <a href="https://www.facebook.com/share/1GydGAaWtn/ " target="_blank" rel="noopener noreferrer" title="https://www.facebook.com/share/1GydGAaWtn/">
-            <img src="/assets/icons8-facebook-96.png" alt="" className="h-8 w-8" />
-          </a>
-          <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/icons8-linkedin-96.png" alt="" className="h-8 w-8 " title="https://www.linkedin.com/company/ecloudemy/" />
-          </a>
-        </div>
+      {/* Top Social Links */}
+      <div className="bg-blue-950 h-12 flex justify-end items-center px-3 space-x-2">
+        <a href="https://www.facebook.com/share/1GydGAaWtn/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/icons8-facebook-96.png" alt="Facebook" className="h-8 w-8" />
+        </a>
+        <a href="https://www.linkedin.com/company/ecloudemy/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/icons8-linkedin-96.png" alt="LinkedIn" className="h-8 w-8" />
+        </a>
       </div>
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-4 ">
+
+      {/* Navbar */}
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between lg:p-4">
         {/* Logo */}
         <Link to="/" className="w-32">
-          <img src={Logo1} alt="Logo" className="w-32 h-14" />
+          <img src={Logo1} alt="Logo" className="w-32 h-14 pl-6 lg:pl-0 py-2 " />
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex">
           <ul className="flex space-x-6 relative">
             {links.map((item, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative group">
                 {item.submenu ? (
                   <div className="flex items-center gap-2 text-lg font-medium text-blue-950 hover:text-sky-600 transition cursor-pointer" onMouseEnter={() => setIsCoursesOpen(true)} onMouseLeave={() => setIsCoursesOpen(false)}>
                     {item.icon} {item.name}
-                    {isCoursesOpen && (
-                      <motion.div className="absolute z-10 left-5 mt-24 w-48 h-20 bg-white  rounded-lg shadow-lg" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants}>
-                        {item.submenu.map((subItem, subIndex) => (
-                          <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-gray-700 hover:text-sky-600  rounded-md">
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
                   </div>
                 ) : (
                   <Link
@@ -82,6 +74,20 @@ const Navbar = () => {
                   >
                     {item.icon} {item.name}
                   </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {isCoursesOpen && item.submenu && (
+                  <motion.div className="absolute z-10 left-0  w-56 bg-white rounded-sm shadow-sm overflow-hidden" initial="hidden" animate="visible" exit="hidden" variants={dropdownVariants} onMouseEnter={() => setIsCoursesOpen(true)} onMouseLeave={() => setIsCoursesOpen(false)}>
+                    {item.submenu.map((subItem, subIndex) => (
+                      <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-lg font-medium text-blue-950 hover:text-sky-600 transition cursor-pointer">
+                        <div className="flex items-center gap-2">
+                          <img src="/assets/microsoft-dynamics-365-seeklogo.png" alt="" className="h-7 w-7" />
+                          {subItem.name}
+                        </div>
+                      </Link>
+                    ))}
+                  </motion.div>
                 )}
               </div>
             ))}
@@ -96,14 +102,14 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-            <CgMenuGridR className="w-14 h-14 text-gray-700" />
+          <button onClick={() => setIsOpen(!isOpen)} className="pr-6 py-2 ">
+            <CgMenuGridR className="w-12 h-12 text-gray-700" />
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <div className={`lg:hidden absolute z-10 top-16 right-4 bg-white shadow-lg rounded-lg w-56 p-3 transition-all duration-300 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 hidden"}`}>
+      <div className={`lg:hidden absolute z-10 top-25 right-4 bg-white shadow-lg rounded-lg w-56 p-3 transition-all duration-300 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 hidden"}`}>
         {links.map((item, index) => (
           <div key={index}>
             {item.submenu ? (
@@ -114,8 +120,11 @@ const Navbar = () => {
                 {isCoursesOpen && (
                   <div className="ml-6 mt-1">
                     {item.submenu.map((subItem, subIndex) => (
-                      <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md">
-                        {subItem.name}
+                      <Link key={subIndex} to={subItem.path} className="block px-4 py-2 text-lg  text-blue-950 hover:text-sky-600 transition cursor-pointer">
+                        <div className="flex items-center gap-2">
+                          <img src="/assets/microsoft-dynamics-365-seeklogo.png" alt="" className="h-5 w-5" />
+                          {subItem.name}
+                        </div>
                       </Link>
                     ))}
                   </div>
