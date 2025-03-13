@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
             <div className="flex gap-2">
               <img src="/assets/Icon/icons8-whatsapp-96.png" alt="" className="w-6" />
-              <h2 className="text-sm bg-blue-950 text-white rounded-lg py-1">0123456789</h2>
+              <h2 className="text-sm bg-blue-950 text-white rounded-lg py-1">+880 1626-750143</h2>
             </div>
           </div>
 

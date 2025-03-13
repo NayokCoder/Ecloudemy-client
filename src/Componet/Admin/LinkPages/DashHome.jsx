@@ -13,7 +13,7 @@ const DashHome = () => {
       return res.data;
     },
   });
-  console.log(users);
+
   const handleDownload = () => {
     const worksheet = XLSX.utils.json_to_sheet(users);
     const workbook = XLSX.utils.book_new();
@@ -29,15 +29,13 @@ const DashHome = () => {
   const [eventDate, setEventDate] = useState("");
 
   const handleSave = async () => {
-    console.log(eventName, eventDate);
     const primeTime = await axiosSecure.post("/api/countdown", { eventName, eventDate });
-    console.log(primeTime);
+
     alert("Countdown Saved!");
   };
 
   const handleReset = async () => {
     const timeDelete = await axiosSecure.delete("/api/countdown");
-    console.log(timeDelete);
     alert("Countdown Reset!");
   };
   return (
@@ -49,21 +47,21 @@ const DashHome = () => {
           </div>
           <div className="stat-title text-gray-100 font-bold">Total Users</div>
           <div className="stat-value text-gray-900 ">{users.length}</div>
-          <div className="stat-desc text-gray-900 font-bold">21% more than last month</div>
+          <div className="stat-desc text-gray-100 font-bold">21% more than last month</div>
         </div>
         <div className="stat color3 text-black rounded-2xl">
           <div className="stat-figure text-primary">
             <img src="/assets/Icon/icons8-mail-50.png" alt="" />
           </div>
-          <div className="stat-title text-gray-900 font-bold">Total Mail</div>
+          <div className="stat-title text-gray-100 font-bold">Total Mail</div>
           <div className="stat-value text-gray-900 ">{users.length}</div>
         </div>
         <div className="stat bg-emerald-500 text-black rounded-2xl">
           <div className="stat-figure text-primary">
             <img src="/assets/Icon/icons8-download-48.png" alt="" />
           </div>
-          <div className="stat-title text-gray-900 font-bold">User info </div>
-          <main onClick={handleDownload} className="py-2 rounded-lg font-semibold transition btn btn-wide text-white shadow-info-content hover:bg-blue-900 border-0">
+          <div className="stat-title text-gray-100 font-bold">User info </div>
+          <main onClick={handleDownload} className="py-2 rounded-lg font-semibold transition btn btn-wide text-white shadow-info-content bg-blue-900 border-0">
             Download Excel
           </main>
           <div className="stat-desc text-gray-300 font-bold"></div>
@@ -75,9 +73,9 @@ const DashHome = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </div>
-          <div className="stat-title text-gray-900 font-bold">Total Users</div>
+          <div className="stat-title text-gray-100 font-bold">Total Users</div>
           <div className="stat-value text-gray-900 ">{users.length}</div>
-          <div className="stat-desc text-gray-900 font-bold">21% more than last month</div>
+          <div className="stat-desc text-gray-100 font-bold">21% more than last month</div>
         </div>
         <div className="stat color3 text-black rounded-2xl ">
           <div className="stat-figure text-primary">
@@ -85,14 +83,14 @@ const DashHome = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </div>
-          <div className="stat-title text-gray-900 font-bold">Total Users</div>
+          <div className="stat-title text-gray-100 font-bold">Total Users</div>
           <div className="stat-value text-gray-900 ">{users.length}</div>
-          <div className="stat-desc text-gray-900 font-bold">21% more than last month</div>
+          <div className="stat-desc text-gray-100 font-bold">21% more than last month</div>
         </div>
       </section>
 
-      <div className="mt-6 p-6 color3 text-gray-900 rounded-xl">
-        <h2 className="text-xl font-semibold  mb-4">Set Countdown</h2>
+      <div className="mt-6 p-6 color3 text-gray-100 rounded-xl">
+        <h2 className="text-xl  font-semibold  mb-4">Set Countdown</h2>
         <input type="text" placeholder="Event Name  " value={eventName} onChange={(e) => setEventName(e.target.value)} className="w-full bg-gray-500 p-3  rounded-lg mb-4 " />
         <input type="date" value={eventDate} onChange={(e) => setEventDate(e.target.value)} className="w-full bg-gray-500 p-3  rounded-lg mb-4 " />
         <div className="flex justify-between">

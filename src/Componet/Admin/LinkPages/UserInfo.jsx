@@ -48,20 +48,22 @@ const UserInfo = () => {
     });
   };
 
-  const filteredUsers = users.filter((user) =>
-    [user.firstName, user.middleName, user.lastName, user.email]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase())
-  );
+  const filteredUsers = users
+    .filter((user) =>
+      [user.firstName, user.middleName, user.lastName, user.email]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => new Date(b.bookingDate) - new Date(a.bookingDate)); // New users first
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 color3 text-white rounded-xl shadow-xl mt-5">
       {/* Search Box */}
       <div className="relative mb-4 flex items-center">
         <FaSearch className="absolute left-3 text-gray-200 text-sm" />
-        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-slate-200 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm text-white placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+        <input type="text" className="w-full md:w-2/3 pl-9 pr-4 py-2 bg-slate-200 rounded-lg  focus:ring-indigo-500 text-sm font-semibold text-gray-900 placeholder-gray-400 shadow" placeholder="Search Users..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
       </div>
 
       {/* Table */}
@@ -77,6 +79,7 @@ const UserInfo = () => {
               <th className="px-3 py-2">Profession</th>
               <th className="px-3 py-2">Designation</th>
               <th className="px-3 py-2">Actions</th>
+              <th className="px-3 py-2">Date</th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +99,8 @@ const UserInfo = () => {
                     <FcDeleteDatabase className="text-sm" /> Delete
                   </button>
                 </td>
+
+                <td className=" py-4 text-gray-400">{new Date(user.bookingDate).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })}</td>
               </tr>
             ))}
           </tbody>

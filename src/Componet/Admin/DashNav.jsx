@@ -67,7 +67,7 @@ const DashNav = () => {
               </ul>
             </div>
           </div>
-          <a className="btn btn-ghost text-xl">OverView</a>
+          <a className="btn btn-ghost text-xl">Overview</a>
         </div>
         <div className="navbar-center  lg:flex">
           <ul className="menu menu-horizontal px-1 text-3xl font-bold">

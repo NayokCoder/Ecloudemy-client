@@ -62,7 +62,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center justify-center gap-2">
               <img src="/assets/Icon/icons8-whatsapp-96.png" alt="" className="w-8" />
-              <h2 className="text-base font-semibold bg-blue-950 text-white  rounded-lg text-center h-auto ">0123456789</h2>
+              <h2 className="text-base font-semibold bg-blue-950 text-white  rounded-lg text-center h-auto ">+880 1626-750143</h2>
             </div>
           </div>
 

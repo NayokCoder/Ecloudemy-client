@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = "8801533468515"; // এখানে আপনার WhatsApp নাম্বার দিন
+  const phoneNumber = "8801626750143"; // এখানে আপনার WhatsApp নাম্বার দিন
 
   return (
     <div className="fixed bottom-5 right-5 z-50">

@@ -48,7 +48,7 @@ const ContactMail = () => {
                   .map((mail) => (
                     <tr
                       key={mail.idcontact}
-                      className="border-b border-gray-700 text-gray-200 hover:bg-gray-800 cursor-pointer"
+                      className="border-b border-gray-700 text-gray-200 bg-gray-800 hover:bg-gray-700 cursor-pointer"
                       onClick={() => {
                         setSelectedMail(mail);
                         handleRead(mail);

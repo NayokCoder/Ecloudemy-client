@@ -15,24 +15,35 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  console.log();
 
   const onSubmit = (data) => {
-    console.log("Data:", data);
-    const response = axiosSecure.post("/post/users-info", data);
+    const currentDate = new Date().toISOString(); // Get the current date and time
 
-    console.log("Form Submitted:", data);
-    Swal.fire({
-      title: "Congratulations! Your seat has been successfully booked",
-      text: "Join Our WhatsApp Group",
-      icon: "success",
-      // confirmButtont: "Join Now",
-      allowOutsideClick: false,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.open("https://chat.whatsapp.com/YOUR_GROUP_LINK", "_blank"); // Replace with your actual WhatsApp group link
-      }
-    });
+    const updatedData = {
+      ...data,
+      bookingDate: currentDate, // Add the timestamp to the form data
+    };
+
+    console.log("Data:", updatedData);
+
+    axiosSecure
+      .post("/post/users-info", updatedData)
+      .then(() => {
+        console.log("Form Submitted:", updatedData);
+        Swal.fire({
+          title: "Congratulations! Your seat has been successfully booked",
+          text: "Join Our WhatsApp Group",
+          icon: "success",
+          allowOutsideClick: false,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open("https://chat.whatsapp.com/YOUR_GROUP_LINK", "_blank"); // Replace with your actual WhatsApp group link
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
   };
 
   useEffect(() => {
